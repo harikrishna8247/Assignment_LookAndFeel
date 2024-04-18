@@ -1,47 +1,141 @@
-/**
-Sample css code
-*/
-/* Set height to 100% for body and html to enable the background image to cover the whole page: */
-body,
-html {
-  height: 100%;
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: #FAF3E0;
+  color: #333;
 }
 
-/*Set background image*/
-.container {
-  background-image: url('https://doc-10-ao-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/r085o9ungppbiokopob2sfbekae4uqbb/1537920000000/14802840322886517493/*/110cT8sl-pOiHGgj9yToPkAqAzrr-RNfb');
-  height: 100%;
-  background-position: center;
-  background-size: cover;
+.wrapper {
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
 }
 
-/* Position text in the middle */
-.middle {
-  position: absolute;
-  color: beige;
-  top: 70%;
-  left: 39%;
-  text-align: center;
-  font-size: 25px;
+.header {
+  background: #A37A74;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/*Set circle in unordered list*/
-.middle ul {
-  list-style-type: circle;
+.header-title {
+  font-size: 24px;
 }
 
-/*Set text inside li tag to left*/
-.middle ul li {
-  text-align: left !important;
-}
-
-/*Set text color for a tag inside middle class and ul>li element*/
-.middle ul li a {
-  color: beige;
-}
-
-/*Change text color and decoration for a tags inside middle class and ul>li element*/
-.middle ul li a:hover {
-  color: red;
+.navigation a {
+  color: #FFFFFF;
   text-decoration: none;
+  padding: 5px 10px;
+  margin: 0 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.navigation a.active,
+.navigation a:hover {
+  background-color: #8C6450;
+}
+
+.intro {
+  background: #D9C3B0;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.intro h1 {
+  margin: 0;
+}
+
+.intro p {
+  margin: 15px 0;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #F4F1EA;
+  color: #333;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: box-shadow 0.3s;
+}
+
+.cta-button:hover {
+  box-shadow: 0px 8px 15px rgba(0,0,0,0.1);
+}
+
+.footer {
+  background: #333333;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 20px 10px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+
+/* Add more CSS as needed for responsive design, typography, etc. */
+/*need for about us page*/
+/* Style for the team member profiles */
+.team-member {
+  background: #ffffff;
+  border-left: 5px solid #333333;
+  margin: 20px 0;
+  padding: 20px;
+  overflow: auto; /* For clearing the float */
+}
+
+.team-member img {
+  float: left;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.team-member h2 {
+  margin: 0 0 10px;
+}
+
+.team-member p {
+  margin: 0;
+  font-size: 0.9em;
+}
+
+/* Style for the logical data model section */
+.logical-data-model {
+  margin-top: 40px;
+}
+
+.logical-data-model img {
+  width: 100%; /* Makes the image responsive */
+  height: auto;
+  display: block; /* Fixes any inline issues */
+  margin: 20px 0;
+}
+.team-member img {
+  float: left;
+  width: 80px; /* Decreased from 100px */
+  height: 80px; /* Ensure this is the same as width for a circle */
+  border-radius: 50%; /* Circular images */
+  margin-right: 15px;
+  object-fit: cover; /* Ensures the image covers the area without distortion */
 }
