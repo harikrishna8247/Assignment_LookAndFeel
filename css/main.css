@@ -22,11 +22,11 @@ body, html {
   align-items: center;
 }
 .plant-images {
-    position: relative;
-    width: 100%;
-    margin: 0;
-    auto;
+  position: relative;
+  width: 100%;
+  margin: 0 auto; /* Centers the element */
 }
+
 .heading02 {
     color: darkolivegreen;
     position: absolute;
@@ -183,4 +183,27 @@ th {
   border-radius: 50%; /* Circular images */
   margin-right: 15px;
   object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+
+
+/* here added style for button */
+/* Buy Button Styles */
+button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
 }
