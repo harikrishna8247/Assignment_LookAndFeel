@@ -123,3 +123,28 @@ function clearForm() {
   document.getElementById('submitReviewButton').style.display = 'block';
   document.getElementById('editButton').style.display = 'none';
 }
+
+
+
+
+
+// Function called when the Buy button is clicked
+function openBuyForm(plantName) {
+    // Display an alert thanking the user for their purchase
+    alert('Thank you for your purchase of ' + plantName + '!');
+}
+
+// Add this to handle the event when the document is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all the Buy buttons
+    var buyButtons = document.getElementsByClassName('buy-btn');
+
+    // Add click event listeners to each Buy button
+    for (var i = 0; i < buyButtons.length; i++) {
+        buyButtons[i].addEventListener('click', function() {
+            // Retrieve the plant name from the button's adjacent elements or attributes
+            var plantName = this.closest('.plant-item').getElementsByTagName('h3')[0].textContent;
+            openBuyForm(plantName);
+        });
+    }
+});
