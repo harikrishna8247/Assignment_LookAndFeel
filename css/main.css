@@ -207,3 +207,209 @@ button {
 button:hover {
   background-color: #45a049;
 }
+
+
+/* add for review and button */
+.plants-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Adjust the space between plant items */
+  justify-content: center;
+}
+
+.plant-item {
+  width: 300px; /* Adjust width as necessary */
+  border: 1px solid #ddd; /* subtle border, you can remove it if you want */
+  padding: 15px;
+  border-radius: 10px; /* Optional for rounded corners */
+  text-align: center;
+}
+
+.plant-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.plant-item h3 {
+  color: darkolivegreen; /* or any color that matches your design */
+  margin: 10px 0;
+}
+
+.plant-item p {
+  color: #555;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.buy-btn, .reviews-btn {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buy-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.buy-btn:hover {
+  background-color: #45a049;
+}
+
+.reviews-btn {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.reviews-btn:hover {
+  background-color: #e0e0e0;
+}
+
+
+
+
+/* Button General Styles */
+button {
+  padding: 8px 15px; /* Smaller padding to reduce button size */
+  font-size: 14px; /* Smaller font size for text inside the button */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Edit and Delete Button Styles */
+.edit-btn, .delete-btn {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  margin-right: 5px; /* Spacing between buttons */
+}
+
+.add-review-btn {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  display: block; /* To make the button a block element */
+  width: auto; /* Auto width based on content */
+  margin: 10px 0; /* Some space above and below the button */
+}
+
+/* Hover Effects for Buttons */
+.edit-btn:hover, .delete-btn:hover, .add-review-btn:hover {
+  background-color: #3e8e41; /* Darker shade of green on hover */
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+/* Additional styles for button placement and the review form */
+.review {
+  margin-bottom: 15px; /* Space between review entries */
+}
+
+.review-form {
+  margin-top: 20px; /* Space above the add review form */
+}
+
+/* Style for form inputs and labels */
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+textarea {
+  width: 100%; /* Make textarea span full width */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px;
+  margin-bottom: 10px; /* Space below the textarea */
+}
+
+input[type="submit"] {
+  width: auto; /* Auto width based on content */
+  padding: 8px 15px; /* Smaller padding */
+}
+
+.add-review-btn:after {
+  content: ""; /* Ensure this is empty or remove the :after selector entirely */
+}
+
+
+
+/* Styles for Add Review Form */
+#addReviewForm {
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+#addReviewForm label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#addReviewForm textarea {
+  width: 100%; /* Adjust width as needed, or use max-width for responsiveness */
+  height: 150px; /* Adjust height as needed */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px;
+  margin-bottom: 10px; /* Space below the textarea */
+}
+
+#addReviewForm .submit-review-btn {
+  background-color: #4CAF50;
+  border: none;
+  padding: 10px 15px; /* Adjust padding as needed */
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#addReviewForm .submit-review-btn:hover {
+  background-color: #367A36; /* Darker green on hover */
+}
+
+
+
+
+
+/* This is a media query that will stack the items on top of each other on smaller screens */
+@media (max-width: 768px) {
+  .plant-item {
+      flex-basis: 100%;
+  }
+}
+
+
+
+.plant-item img {
+  width: 100%; /* This will make the image fill the container */
+  height: auto; /* This will maintain the aspect ratio */
+  display: block; /* This removes any extra space beneath the image */
+  object-fit: cover; /* This ensures that the image covers the area without distorting */
+  max-height: 200px; /* Set a maximum height for all images */
+}
+
+
+
+.price {
+  display: block; /* Makes "Price" span block-level, which will place it on a new line */
+}
+
+
+
+
+/* Increase the font size of the plant name */
+.plant-item h3 {
+  font-size: 24px; /* Example size, adjust as needed */
+}
+
+/* Decrease the font size of the "Air-purifying" label */
+.air-purifying {
+  font-size: 14px; /* Example size, adjust as needed */
+  display: block; /* To keep it on its own line */
+  color: green; /* To make the text green */
+}
