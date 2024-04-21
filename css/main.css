@@ -283,29 +283,39 @@ button {
 }
 
 /* Edit and Delete Button Styles */
-.edit-btn, .delete-btn {
+.edit-btn {
   background-color: #4CAF50; /* Green background */
   color: white; /* White text */
   margin-right: 5px; /* Spacing between buttons */
 }
 
+.delete-btn {
+    background-color: red; 
+    color: white; /* White text */
+    margin-right: 5px; /* Spacing between buttons */
+}
+
 .add-review-btn {
-  background-color: #4CAF50; /* Green background */
-  color: white; /* White text */
-  display: block; /* To make the button a block element */
-  width: auto; /* Auto width based on content */
-  margin: 10px 0; /* Some space above and below the button */
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    display: block; /* To make the button a block element */
+    width: auto; /* Auto width based on content */
+    margin: 10px 0; /* Some space above and below the button */
 }
 
 /* Hover Effects for Buttons */
-.edit-btn:hover, .delete-btn:hover, .add-review-btn:hover {
+.edit-btn:hover, .add-review-btn:hover {
   background-color: #3e8e41; /* Darker shade of green on hover */
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2); /* Shadow for depth */
 }
 
+.delete-btn:hover {
+    background-color: red; 
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
 /* Additional styles for button placement and the review form */
 .review {
-  margin-bottom: 15px; /* Space between review entries */
+    margin-bottom: 15px; /* Space between review entries */
 }
 
 .review-form {
