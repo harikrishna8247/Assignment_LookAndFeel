@@ -1,60 +1,3 @@
-/*document.addEventListener('DOMContentLoaded', loadReviews);
-
-let currentlyEditingIndex = null; // Track which review is being edited
-
-function loadReviews() {
-    const reviews = JSON.parse(localStorage.getItem('reviewsForFern') || '[]');
-    const reviewsContainer = document.getElementById('reviewsContainer');
-    reviewsContainer.innerHTML = reviews.map((review, index) => `
-        <div class="review">
-            <p>${review}</p>
-            <button onclick="editReview(${index})">Edit</button>
-            <button onclick="deleteReview(${index})">Delete</button>
-        </div>
-    `).join('');
-}
-
-function submitReview() {
-    const reviewText = document.getElementById('reviewText').value.trim();
-    if (reviewText) {
-        const reviews = JSON.parse(localStorage.getItem('reviewsForFern') || '[]');
-        if (currentlyEditingIndex !== null) {
-            // Update existing review
-            reviews[currentlyEditingIndex] = reviewText;
-        } else {
-            // Add new review
-            reviews.push(reviewText);
-        }
-        localStorage.setItem('reviewsForFern', JSON.stringify(reviews));
-        clearForm();
-        loadReviews();
-    } else {
-        alert('Please enter a review.');
-    }
-}
-
-function editReview(index) {
-    const reviews = JSON.parse(localStorage.getItem('reviewsForFern') || '[]');
-    document.getElementById('reviewText').value = reviews[index];
-    currentlyEditingIndex = index; // Set the index to the currently editing review
-    // Optionally, scroll to the review input area
-    document.getElementById('reviewText').scrollIntoView();
-}
-
-function deleteReview(index) {
-    const reviews = JSON.parse(localStorage.getItem('reviewsForFern') || '[]');
-    reviews.splice(index, 1);
-    localStorage.setItem('reviewsForFern', JSON.stringify(reviews));
-    loadReviews();
-}
-
-function clearForm() {
-    document.getElementById('reviewText').value = '';
-    currentlyEditingIndex = null; // Reset the editing index
-}
-*/
-// Assume that localStorage keys are structured like 'reviews_Spider_Plant', 'reviews_Peace_Lily', etc.
-// main.js
 document.addEventListener('DOMContentLoaded', function() {
   // Get the plant name from the URL query parameters
   const params = new URLSearchParams(window.location.search);
@@ -125,12 +68,8 @@ function clearForm() {
 }
 
 
-
-
-
-// Function called when the Buy button is clicked
 function openBuyForm(plantName) {
-    // Display an alert thanking the user for their purchase
+    
     alert('Thank you for your purchase of ' + plantName + '!');
 }
 
@@ -142,7 +81,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add click event listeners to each Buy button
     for (var i = 0; i < buyButtons.length; i++) {
         buyButtons[i].addEventListener('click', function() {
-            // Retrieve the plant name from the button's adjacent elements or attributes
             var plantName = this.closest('.plant-item').getElementsByTagName('h3')[0].textContent;
             openBuyForm(plantName);
         });
