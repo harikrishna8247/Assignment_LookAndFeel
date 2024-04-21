@@ -423,3 +423,10 @@ input[type="submit"] {
   display: block; /* To keep it on its own line */
   color: green; /* To make the text green */
 }
+
+.air-purifying_no {
+  font-size: 14px; /* Example size, adjust as needed */
+  display: block; /* To keep it on its own line */
+  color: red; /* To make the text green */
+}
+
