@@ -24,7 +24,7 @@ body, html {
 .plant-images {
   position: relative;
   width: 100%;
-  margin: 0 auto; /* Centers the element */
+  margin: 0 auto; 
 }
 
 .heading02 {
@@ -139,15 +139,13 @@ th {
 }
 
 
-/* Add more CSS as needed for responsive design, typography, etc. */
-/*need for about us page*/
-/* Style for the team member profiles */
+
 .team-member {
   background: #ffffff;
   border-left: 5px solid #333333;
   margin: 20px 0;
   padding: 20px;
-  overflow: auto; /* For clearing the float */
+  overflow: auto; 
 }
 
 .team-member img {
@@ -165,32 +163,31 @@ th {
   font-size: 0.9em;
 }
 
-/* Style for the logical data model section */
+
 .logical-data-model {
   margin-top: 40px;
 }
 
 .logical-data-model img {
-  width: 100%; /* Makes the image responsive */
+  width: 100%; 
   height: auto;
-  display: block; /* Fixes any inline issues */
+  display: block; 
   margin: 20px 0;
 }
 .team-member img {
   float: left;
-  width: 80px; /* Decreased from 100px */
-  height: 80px; /* Ensure this is the same as width for a circle */
-  border-radius: 50%; /* Circular images */
+  width: 80px; 
+  height: 80px; 
+  border-radius: 50%; 
   margin-right: 15px;
-  object-fit: cover; /* Ensures the image covers the area without distortion */
+  object-fit: cover; 
 }
 
 
 
-/* here added style for button */
-/* Buy Button Styles */
+
 button {
-  background-color: #4CAF50; /* Green */
+  background-color: #4CAF50; 
   border: none;
   color: white;
   padding: 10px 20px;
@@ -209,19 +206,19 @@ button:hover {
 }
 
 
-/* add for review and button */
+
 .plants-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; /* Adjust the space between plant items */
+  gap: 20px; 
   justify-content: center;
 }
 
 .plant-item {
-  width: 300px; /* Adjust width as necessary */
-  border: 1px solid #ddd; /* subtle border, you can remove it if you want */
+  width: 300px; 
+  border: 1px solid #ddd; 
   padding: 15px;
-  border-radius: 10px; /* Optional for rounded corners */
+  border-radius: 10px; 
   text-align: center;
 }
 
@@ -232,7 +229,7 @@ button:hover {
 }
 
 .plant-item h3 {
-  color: darkolivegreen; /* or any color that matches your design */
+  color: darkolivegreen; 
   margin: 10px 0;
 }
 
@@ -272,82 +269,82 @@ button:hover {
 
 
 
-/* Button General Styles */
+
 button {
-  padding: 8px 15px; /* Smaller padding to reduce button size */
-  font-size: 14px; /* Smaller font size for text inside the button */
+  padding: 8px 15px; 
+  font-size: 14px; 
   border: none;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-/* Edit and Delete Button Styles */
+
 .edit-btn {
-  background-color: #4CAF50; /* Green background */
-  color: white; /* White text */
-  margin-right: 5px; /* Spacing between buttons */
+  background-color: #4CAF50;
+  color: white; 
+  margin-right: 5px; 
 }
 
 .delete-btn {
     background-color: red; 
-    color: white; /* White text */
-    margin-right: 5px; /* Spacing between buttons */
+    color: white; 
+    margin-right: 5px; 
 }
 
 .add-review-btn {
-    background-color: #4CAF50; /* Green background */
-    color: white; /* White text */
-    display: block; /* To make the button a block element */
-    width: auto; /* Auto width based on content */
-    margin: 10px 0; /* Some space above and below the button */
+    background-color: #4CAF50; 
+    color: white; 
+    display: block; 
+    width: auto; 
+    margin: 10px 0;
 }
 
-/* Hover Effects for Buttons */
+
 .edit-btn:hover, .add-review-btn:hover {
-  background-color: #3e8e41; /* Darker shade of green on hover */
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  background-color: #3e8e41; 
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 .delete-btn:hover {
     background-color: red; 
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
-/* Additional styles for button placement and the review form */
+
 .review {
-    margin-bottom: 15px; /* Space between review entries */
+    margin-bottom: 15px; 
 }
 
 .review-form {
-  margin-top: 20px; /* Space above the add review form */
+  margin-top: 20px; 
 }
 
-/* Style for form inputs and labels */
+
 label {
   display: block;
   margin-bottom: 5px;
 }
 
 textarea {
-  width: 100%; /* Make textarea span full width */
+  width: 100%; 
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 8px;
-  margin-bottom: 10px; /* Space below the textarea */
+  margin-bottom: 10px; 
 }
 
 input[type="submit"] {
-  width: auto; /* Auto width based on content */
-  padding: 8px 15px; /* Smaller padding */
+  width: auto; 
+  padding: 8px 15px; 
 }
 
 .add-review-btn:after {
-  content: ""; /* Ensure this is empty or remove the :after selector entirely */
+  content: ""; 
 }
 
 
 
-/* Styles for Add Review Form */
+
 #addReviewForm {
   background-color: #f7f7f7;
   padding: 20px;
@@ -360,18 +357,18 @@ input[type="submit"] {
 }
 
 #addReviewForm textarea {
-  width: 100%; /* Adjust width as needed, or use max-width for responsiveness */
-  height: 150px; /* Adjust height as needed */
+  width: 100%; 
+  height: 150px; 
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 8px;
-  margin-bottom: 10px; /* Space below the textarea */
+  margin-bottom: 10px; 
 }
 
 #addReviewForm .submit-review-btn {
   background-color: #4CAF50;
   border: none;
-  padding: 10px 15px; /* Adjust padding as needed */
+  padding: 10px 15px; 
   color: white;
   border-radius: 4px;
   cursor: pointer;
@@ -379,14 +376,14 @@ input[type="submit"] {
 }
 
 #addReviewForm .submit-review-btn:hover {
-  background-color: #367A36; /* Darker green on hover */
+  background-color: #367A36;
 }
 
 
 
 
 
-/* This is a media query that will stack the items on top of each other on smaller screens */
+
 @media (max-width: 768px) {
   .plant-item {
       flex-basis: 100%;
@@ -396,37 +393,37 @@ input[type="submit"] {
 
 
 .plant-item img {
-  width: 100%; /* This will make the image fill the container */
-  height: auto; /* This will maintain the aspect ratio */
-  display: block; /* This removes any extra space beneath the image */
-  object-fit: cover; /* This ensures that the image covers the area without distorting */
-  max-height: 200px; /* Set a maximum height for all images */
+  width: 100%; 
+  height: auto; 
+  display: block; 
+  object-fit: cover; 
+  max-height: 200px; 
 }
 
 
 
 .price {
-  display: block; /* Makes "Price" span block-level, which will place it on a new line */
+  display: block; 
 }
 
 
 
 
-/* Increase the font size of the plant name */
+
 .plant-item h3 {
-  font-size: 24px; /* Example size, adjust as needed */
+  font-size: 24px; 
 }
 
-/* Decrease the font size of the "Air-purifying" label */
+
 .air-purifying {
-  font-size: 14px; /* Example size, adjust as needed */
-  display: block; /* To keep it on its own line */
-  color: green; /* To make the text green */
+  font-size: 14px; 
+  display: block; 
+  color: green; 
 }
 
 .air-purifying_no {
-  font-size: 14px; /* Example size, adjust as needed */
-  display: block; /* To keep it on its own line */
-  color: red; /* To make the text green */
+  font-size: 14px; 
+  display: block; 
+  color: red; 
 }
 
