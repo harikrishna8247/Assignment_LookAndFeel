@@ -427,3 +427,29 @@ input[type="submit"] {
   color: red; 
 }
 
+.stats-button {
+  display: block; /* Or inline-block, depending on your design */
+  margin: 20px auto; /* Center the button */
+  padding: 10px 15px;
+  font-size: 1rem;
+  color: white;
+  background-color: #4CAF50; /* Green background */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.chart-heading-container {
+  text-align: center; /* Center the heading and description */
+  margin-bottom: 1em;
+}
+
+.stats-heading {
+  margin-top: 20px;
+}
+
+.stats-description {
+  margin-bottom: 20px;
+}
+
