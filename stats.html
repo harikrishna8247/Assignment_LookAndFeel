@@ -1,40 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Plant Data Analysis</title>
-<style>
-    .chart-container {
-      display: flex; /* Use flexbox to center the content */
-      flex-direction: column; /* Stack flex items vertically */
-      align-items: center; /* Center flex items horizontally */
-      justify-content: center; /* Center flex items vertically */
-      height: 400px; /* Provide a height for the container */
-      margin: auto; /* Center the container horizontally */
-    }
-    
-    /* Styles for the heading and description */
-    .chart-heading {
-      margin: 20px 0;
-      font-size: 1.5rem;
-      text-align: center; /* Center the text */
-    }
-    
-    .chart-description {
-      font-size: 1rem;
-      text-align: center; /* Center the text */
-      margin-bottom: 20px; /* Space below the description */
-    }
-    
-    /* Additional style to ensure canvas takes the full width of its container */
-    #airPurifyingChart {
-      max-width: 100%; /* Make the canvas width responsive */
-      aspect-ratio: 1 / 1; /* Keep the canvas square */
-    }
-    
-    </style>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Data Analysis</title>
+    <link rel="stylesheet" href="css\main.css">
+    <div class="wrapper">
+        <header class="header">
+            <div class="header-title">Statistics</div>
+            <nav class="navigation">
+                <a href="index.html">Home</a>
+                <a href="guide.html">Guide</a>
+                <a href="purchase.html">Purchase</a>
+                <a href="about.html">About Us</a>
+                <a href="purchase.html"class="active">Statistics</a>
+            </nav>
+
+        </header>
+        <style>
+            .chart-container {
+                display: flex; 
+                flex-direction: column; 
+                align-items: center; 
+                justify-content: center; 
+                height: 400px; 
+                margin: auto; 
+            }
+
+            
+            .chart-heading {
+                margin: 20px 0;
+                font-size: 1.5rem;
+                text-align: center; 
+            }
+
+            .chart-description {
+                font-size: 1rem;
+                text-align: center; 
+                margin-bottom: 20px; 
+            }
+
+            
+            #airPurifyingChart {
+                max-width: 100%; 
+                aspect-ratio: 1 / 1; 
+            }
+        </style>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -65,7 +77,7 @@
 </section>
 
 <script>
-  // The JSON data for the plants
+  
   const plantData = [
   {
     "plant": "Fern",
@@ -142,7 +154,7 @@
 
   ];
 
-  // Initializing the Bar Chart for Watering Schedule
+  
   const wateringCtx = document.getElementById('wateringScheduleChart').getContext('2d');
   const wateringScheduleChart = new Chart(wateringCtx, {
     type: 'bar',
@@ -175,7 +187,7 @@
     }
   });
 
-  // Preparing data for the Pie Chart for Air Purifying Plants
+  
   const airPurifyingPlantNames = plantData
   .filter(plant => plant.airPurifying === "Yes")
   .map(plant => plant.plant);
@@ -184,15 +196,13 @@ const nonAirPurifyingPlantNames = plantData
   .filter(plant => plant.airPurifying === "No")
   .map(plant => plant.plant);
 
-// Preparing data for the Pie Chart for Air Purifying Plants
+
 const airPurifyingCounts = {
   Yes: airPurifyingPlantNames.length,
   No: nonAirPurifyingPlantNames.length
 };
 
-// ... Other chart initialization code ...
 
-// Update the Pie Chart tooltips configuration
 const airPurifyingCtx = document.getElementById('airPurifyingChart').getContext('2d');
 const airPurifyingChart = new Chart(airPurifyingCtx, {
   type: 'pie',
@@ -230,13 +240,13 @@ const airPurifyingChart = new Chart(airPurifyingCtx, {
       maintainAspectRatio: true
   }
 });
-  // Setting up the data for the Scatter Plot
+  
   const scatterData = {
     datasets: [{
       label: 'Air Purifying Plants',
       data: plantData.filter(plant => plant.airPurifying === "Yes").map(plant => ({
         x: plant.wateringSchedule,
-        y: parseFloat(plant.price.slice(1)), // Remove the dollar sign and convert to number
+        y: parseFloat(plant.price.slice(1)), 
         plantName: plant.plant
       })),
       backgroundColor: 'rgba(75, 192, 192, 0.5)',
@@ -251,7 +261,7 @@ const airPurifyingChart = new Chart(airPurifyingCtx, {
     }]
   };
 
-  // Configuring the Scatter Plot
+  
   const scatterConfig = {
     type: 'scatter',
     data: scatterData,
@@ -286,12 +296,12 @@ const airPurifyingChart = new Chart(airPurifyingCtx, {
     }
   };
 
-  // Initializing the Scatter Plot
+  
   const priceWateringScatterChart = new Chart(
     document.getElementById('priceWateringScatterChart'),
     scatterConfig
   );
 </script>
-
+    </div>
 </body>
 </html>
