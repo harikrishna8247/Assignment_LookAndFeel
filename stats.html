@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plant Data Analysis</title>
+<style>
+    .chart-container {
+      display: flex; /* Use flexbox to center the content */
+      flex-direction: column; /* Stack flex items vertically */
+      align-items: center; /* Center flex items horizontally */
+      justify-content: center; /* Center flex items vertically */
+      height: 400px; /* Provide a height for the container */
+      margin: auto; /* Center the container horizontally */
+    }
+    
+    /* Styles for the heading and description */
+    .chart-heading {
+      margin: 20px 0;
+      font-size: 1.5rem;
+      text-align: center; /* Center the text */
+    }
+    
+    .chart-description {
+      font-size: 1rem;
+      text-align: center; /* Center the text */
+      margin-bottom: 20px; /* Space below the description */
+    }
+    
+    /* Additional style to ensure canvas takes the full width of its container */
+    #airPurifyingChart {
+      max-width: 100%; /* Make the canvas width responsive */
+      aspect-ratio: 1 / 1; /* Keep the canvas square */
+    }
+    
+    </style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<section class="chart-section">
+  <h2 class="chart-heading">Plant Watering Schedule</h2>
+  <p class="chart-description">This bar chart represents the watering schedule for each plant, measured in weeks.</p>
+  <div class="chart-container">
+      <canvas id="wateringScheduleChart"></canvas>
+  </div>
+</section>
+
+<section class="chart-section">
+  <h2 class="chart-heading">Air Purifying Plants</h2>
+  <p class="chart-description">The pie chart illustrates the proportion of air-purifying plants compared to non-air-purifying ones.</p>
+  <div class="center-chart-container">
+      <div class="chart-container">
+          <canvas id="airPurifyingChart"></canvas>
+      </div>
+  </div>
+</section>
+
+<section class="chart-section">
+  <h2 class="chart-heading">Plant Price vs. Watering Schedule</h2>
+  <p class="chart-description">This scatter plot displays the relationship between the price of the plants and their watering schedules.</p>
+  <div class="chart-container">
+      <canvas id="priceWateringScatterChart"></canvas>
+  </div>
+</section>
+
+<script>
+  // The JSON data for the plants
+  const plantData = [
+  {
+    "plant": "Fern",
+    "price": "$19.99",
+    "airPurifying": "No",
+    "wateringSchedule": 1,
+    "sunlightRequirement": "Low light",
+    "temperatureRange": "65-75°F (18-24°C)"
+  },
+  {
+    "plant": "Spider Plant",
+    "price": "$8.99",
+    "airPurifying": "Yes",
+    "wateringSchedule": 1.4,
+    "sunlightRequirement": "Indirect sunlight",
+    "temperatureRange": "60-80°F (15-27°C)"
+  },
+  {
+    "plant": "Rubber Tree",
+    "price": "$15.99",
+    "airPurifying": "Yes",
+    "wateringSchedule": 2,
+    "sunlightRequirement": "Bright, indirect light",
+    "temperatureRange": "60-75°F (15-24°C)"
+  },
+  {
+    "plant": "Aloe Vera",
+    "price": "$9.99",
+    "airPurifying": "Yes",
+    "wateringSchedule": 3,
+    "sunlightRequirement": "Direct sunlight",
+    "temperatureRange": "60-75°F (15-24°C)"
+  },
+  {
+    "plant": "Peace Lily",
+    "price": "$12.99",
+    "airPurifying": "Yes",
+    "wateringSchedule": 1,
+    "sunlightRequirement": "Low to moderate light",
+    "temperatureRange": "65-80°F (18-27°C)"
+  },
+  {
+    "plant": "Pothos",
+    "price": "$6.99",
+    "airPurifying": "Yes",
+    "wateringSchedule": 1.5,
+    "sunlightRequirement": "Low to medium indirect light",
+    "temperatureRange": "65-75°F (18-24°C)"
+  },
+  {
+    "plant": "Devil's Ivy",
+    "price": "$7.99",
+    "airPurifying": "Yes",
+    "wateringSchedule": 1.5,
+    "sunlightRequirement": "Low to medium indirect light",
+    "temperatureRange": "65-75°F (18-24°C)"
+  },
+  {
+    "plant": "ZZ Plant",
+    "price": "$14.99",
+    "airPurifying": "No",
+    "wateringSchedule": 4,
+    "sunlightRequirement": "Low to bright indirect light",
+    "temperatureRange": "60-75°F (15-24°C)"
+  },
+  {
+    "plant": "Chinese Money Plant",
+    "price": "$8.99",
+    "airPurifying": "No",
+    "wateringSchedule": 1,
+    "sunlightRequirement": "Indirect light",
+    "temperatureRange": "60-75°F (15-24°C)"
+  }
+
+  ];
+
+  // Initializing the Bar Chart for Watering Schedule
+  const wateringCtx = document.getElementById('wateringScheduleChart').getContext('2d');
+  const wateringScheduleChart = new Chart(wateringCtx, {
+    type: 'bar',
+    data: {
+        labels: plantData.map(data => data.plant),
+        datasets: [{
+            label: 'Watering Schedule (in weeks)',
+            data: plantData.map(data => data.wateringSchedule),
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true,
+                ticks: {
+                    stepSize: 1
+                }
+            }
+        },
+        plugins: {
+            legend: {
+                display: true
+            }
+        },
+        responsive: true,
+        maintainAspectRatio: false
+    }
+  });
+
+  // Preparing data for the Pie Chart for Air Purifying Plants
+  const airPurifyingPlantNames = plantData
+  .filter(plant => plant.airPurifying === "Yes")
+  .map(plant => plant.plant);
+
+const nonAirPurifyingPlantNames = plantData
+  .filter(plant => plant.airPurifying === "No")
+  .map(plant => plant.plant);
+
+// Preparing data for the Pie Chart for Air Purifying Plants
+const airPurifyingCounts = {
+  Yes: airPurifyingPlantNames.length,
+  No: nonAirPurifyingPlantNames.length
+};
+
+// ... Other chart initialization code ...
+
+// Update the Pie Chart tooltips configuration
+const airPurifyingCtx = document.getElementById('airPurifyingChart').getContext('2d');
+const airPurifyingChart = new Chart(airPurifyingCtx, {
+  type: 'pie',
+  data: {
+      labels: ['Air Purifying', 'Not Air Purifying'],
+      datasets: [{
+          label: 'Air Purifying Capability',
+          data: [airPurifyingCounts.Yes, airPurifyingCounts.No],
+          backgroundColor: [
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(255, 99, 132, 0.2)'
+          ],
+          borderColor: [
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 99, 132, 1)'
+          ],
+          borderWidth: 1
+      }]
+  },
+  options: {
+      plugins: {
+          tooltip: {
+              callbacks: {
+                  afterLabel: function(tooltipItem) {
+                      if (tooltipItem.label === 'Air Purifying') {
+                          return airPurifyingPlantNames;
+                      } else {
+                          return nonAirPurifyingPlantNames;
+                      }
+                  }
+              }
+          }
+      },
+      responsive: true,
+      maintainAspectRatio: true
+  }
+});
+  // Setting up the data for the Scatter Plot
+  const scatterData = {
+    datasets: [{
+      label: 'Air Purifying Plants',
+      data: plantData.filter(plant => plant.airPurifying === "Yes").map(plant => ({
+        x: plant.wateringSchedule,
+        y: parseFloat(plant.price.slice(1)), // Remove the dollar sign and convert to number
+        plantName: plant.plant
+      })),
+      backgroundColor: 'rgba(75, 192, 192, 0.5)',
+    }, {
+      label: 'Non-Air Purifying Plants',
+      data: plantData.filter(plant => plant.airPurifying === "No").map(plant => ({
+        x: plant.wateringSchedule,
+        y: parseFloat(plant.price.slice(1)),
+        plantName: plant.plant
+      })),
+      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+    }]
+  };
+
+  // Configuring the Scatter Plot
+  const scatterConfig = {
+    type: 'scatter',
+    data: scatterData,
+    options: {
+      scales: {
+        x: {
+          type: 'linear',
+          title: {
+            display: true,
+            text: 'Watering Schedule (in weeks)'
+          }
+        },
+        y: {
+          title: {
+            display: true,
+            text: 'Price ($)'
+          }
+        }
+      },
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              const label = context.dataset.data[context.dataIndex].plantName;
+              return `${label}: ($${context.raw.y}, watering every ${context.raw.x} weeks)`;
+            }
+          }
+        }
+      },
+      responsive: true,
+      maintainAspectRatio: true
+    }
+  };
+
+  // Initializing the Scatter Plot
+  const priceWateringScatterChart = new Chart(
+    document.getElementById('priceWateringScatterChart'),
+    scatterConfig
+  );
+</script>
+
+</body>
+</html>
